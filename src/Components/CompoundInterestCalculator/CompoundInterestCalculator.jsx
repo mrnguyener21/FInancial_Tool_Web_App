@@ -18,18 +18,13 @@ const CompoundInterestCalculator = () => {
   const years = parseInt(yearsInvested)
   const compoundRate = parseInt(compoundValue.rate);
 
-
-  //NEED TO MAKE THESE DYNAMIC WITH FOR LOOP TO GET DATA FOR EACH YEAR. FOR EACH ITERATION WE WILL WANT TO PUSH IT INTO AN EMPTY ARRAY, JK WE DON'T NEED TO PUSH TO AN EMPTY ARRAY IF WE JUST USE MAP FOR EACH ITERATION...LETS THINK THIS THROUGH
-  //WE WILL ALSO WANT TO PUSH EACH ITERATION INTO AN EMPTY ARRAY SO THAT OUR LABELS CAN BE DYNAMIC AS WELL
-  //formula for simple interest
+  //simple interest
   const totalWithInterest = [principal];
-
   for (let i = 1; i < years+1; i++) {
     totalWithInterest.push(principal+(principal*interest)*i)
   }
 
-  //formula for compound interest
-  //pretty sure if i put all variables in a for loop and replace the years with i, it should be good
+  //compound interest
   const totalWithCompoundInterst = [principal];
   const arrayOfYears =[0]
   for (let i = 1; i < years+1; i++) {
@@ -42,7 +37,6 @@ const CompoundInterestCalculator = () => {
     
   }
 
-  //to correctly pass the values based on which compound rate is chosen
   const handleChange = (event) => {
     const name = event.target.name;
     setCompoundValue({
