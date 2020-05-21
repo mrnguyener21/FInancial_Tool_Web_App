@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {BudgetCalculator, CompoundInterestCalculator, RentCalculator} from './Components';
+
+// import styles from './App.module.css'
 
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
@@ -10,7 +12,6 @@ import Fade from '@material-ui/core/Fade';
 
 
 const App = ()=> {
-
   //probably take useStyles and transition it to app.module.css later
   const useStyles = makeStyles((theme) => ({
     modal: {
@@ -26,9 +27,9 @@ const App = ()=> {
     },
   }));
   const classes = useStyles();
-  const [budget, setBudget] = React.useState(false);
-  const [rent, setRent] = React.useState(false);
-  const [compoundInterest, setCompoundInterest] = React.useState(false);
+  const [budget, setBudget] = useState(false);
+  const [rent, setRent] = useState(false);
+  const [compoundInterest, setCompoundInterest] = useState(false);
 
   const openBudget = () => {
     setBudget(true)
@@ -42,12 +43,12 @@ const App = ()=> {
     setCompoundInterest(true)  
   
   };
-
   const handleClose = () => {
     setBudget(false);
     setRent(false);
     setCompoundInterest(false);
   };
+
   return (
     <div className="App">
      <h1>APP</h1>
