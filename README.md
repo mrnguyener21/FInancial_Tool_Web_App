@@ -3,3 +3,4 @@
 -create a titlebar(i think that's what it's called)
     -title will be financialTools
 -at  the bottom create a quick layout with a description for each calculator
+-make rent chart no show unless inputs are filled in

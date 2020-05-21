@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {BudgetCalculator, CompoundInterestCalculator, RentCalculator} from './Components';
+import {BudgetCalculator, CompoundInterestCalculator, RentCalculator, MoreInfo} from './Components';
 
-// import styles from './App.module.css'
+import styles from './App.module.css'
 
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
@@ -9,10 +9,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 
 
-
-
 const App = ()=> {
-  //probably take useStyles and transition it to app.module.css later
   const useStyles = makeStyles((theme) => ({
     modal: {
       display: 'flex',
@@ -50,16 +47,16 @@ const App = ()=> {
   };
 
   return (
-    <div className="App">
-     <h1>APP</h1>
+    <div className={styles.container}>
+     <h1 className={styles.header}>Financial Tools</h1>
 
-     <button type="button" onClick={openBudget}>
+     <button type="button" onClick={openBudget} className={styles.button}>
         Budget Calculator
       </button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        className={classes.modal}
+        className={styles.modal}
         open={budget}
         onClose={handleClose}
         closeAfterTransition
@@ -69,18 +66,18 @@ const App = ()=> {
         }}
       >
         <Fade in={budget}>
-          <div className={classes.paper}>
+          <div className={styles.FadeIn}>
      <BudgetCalculator/>
           </div>
         </Fade>
       </Modal>
-     <button type="button" onClick={openRent}>
+     <button type="button" onClick={openRent} className={styles.button}>
         Rent Calculator
       </button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        className={classes.modal}
+        className={styles.modal}
         open={rent}
         onClose={handleClose}
         closeAfterTransition
@@ -95,13 +92,13 @@ const App = ()=> {
           </div>
         </Fade>
       </Modal>
-     <button type="button" onClick={openCompoundInterest}>
+     <button type="button" onClick={openCompoundInterest} className={styles.button}>
         Compound Interest Calculator
       </button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        className={classes.modal}
+        className={styles.modal}
         open={compoundInterest}
         onClose={handleClose}
         closeAfterTransition
@@ -116,6 +113,10 @@ const App = ()=> {
           </div>
         </Fade>
       </Modal>
+      <MoreInfo/>
+      <footer className={styles.footer}>
+        <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+      </footer>
     </div>
   );
 }
