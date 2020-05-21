@@ -58,7 +58,6 @@ const App = ()=> {
         aria-describedby="transition-modal-description"
         className={styles.modal}
         open={budget}
-        onClose={handleClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
@@ -67,10 +66,11 @@ const App = ()=> {
       >
         <Fade in={budget}>
           <div className={styles.FadeIn}>
-     <BudgetCalculator/>
+            <BudgetCalculator handleClose={handleClose}/>
           </div>
         </Fade>
       </Modal>
+
      <button type="button" onClick={openRent} className={styles.button}>
         Rent Calculator
       </button>
@@ -79,7 +79,6 @@ const App = ()=> {
         aria-describedby="transition-modal-description"
         className={styles.modal}
         open={rent}
-        onClose={handleClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
@@ -87,11 +86,13 @@ const App = ()=> {
         }}
       >
         <Fade in={rent}>
-          <div className={classes.paper}>
-     <RentCalculator/>
+          <div className={styles.FadeIn}>
+            <RentCalculator handleClose={handleClose}/>
           </div>
         </Fade>
       </Modal>
+
+
      <button type="button" onClick={openCompoundInterest} className={styles.button}>
         Compound Interest Calculator
       </button>
@@ -109,7 +110,7 @@ const App = ()=> {
       >
         <Fade in={compoundInterest}>
           <div className={classes.paper}>
-     <CompoundInterestCalculator/>
+     <CompoundInterestCalculator handleClose={handleClose}/>
           </div>
         </Fade>
       </Modal>

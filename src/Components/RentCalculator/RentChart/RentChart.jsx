@@ -2,7 +2,9 @@ import React,{useState} from 'react';
 import {Typography, Slider} from '@material-ui/core'
 import {Doughnut} from 'react-chartjs-2';
 
-const RentChart = ({monthlyIncome, monthlyTax}) => {
+import styles from './RentChart.module.css';
+
+const RentChart = ({monthlyIncome, monthlyTax, salary, tax}) => {
   const [rentBudget, setRentBudget] = useState(30);
   const [click, setClick] = useState(false)
 
@@ -33,9 +35,8 @@ const RentChart = ({monthlyIncome, monthlyTax}) => {
 };
   return (
     <>
-      <Typography id="discrete-slider-small-steps" gutterBottom>
-        Percentage of Monthly Income Going Towards Rent *Generally recommendation is up to 30%* *numbers rounded to nearest whole dollar*
-      </Typography>
+    <div className={styles.container}>
+      <div className={styles.sliderContainer}>
       <Slider
         value={rentBudget}
         step={1}
@@ -44,8 +45,15 @@ const RentChart = ({monthlyIncome, monthlyTax}) => {
         valueLabelDisplay="auto"
         onChange={(e,value)=>setRentBudget(value)}
       />
-      <button onClick={()=>setClick(true)} >CALCULATE BUDGET</button>
-      {click?(<Doughnut data={data}/>):console.log('no click')}    
+      <Typography id="discrete-slider-small-steps" gutterBottom>
+        Percentage of Monthly Income Going Towards Rent *Generally recommendation is up to 30%* *numbers rounded to nearest whole dollar*
+      </Typography>
+      </div>
+      <div className={styles.buttonContainer}>
+      <button className={styles.button} onClick={()=> salary > 0 && tax > 0?setClick(true):console.log(salary, tax)} >CALCULATE BUDGET</button>
+      </div>
+      {click?(<Doughnut height={90} data={data}/>):console.log(click)}    
+    </div>
     </>
   )
 }

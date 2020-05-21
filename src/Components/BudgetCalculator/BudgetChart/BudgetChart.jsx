@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
 import {Doughnut} from 'react-chartjs-2';
-// import styles from './Chart.module.css'
+import styles from './BudgetChart.module.css'
 
 const BudgetChart = ({totalBudget, wantsFormula, needsFormula, savingsFormula, taxFormula}) => {
     const [click, setClick] = useState(false)
@@ -32,15 +32,20 @@ const BudgetChart = ({totalBudget, wantsFormula, needsFormula, savingsFormula, t
 
     return (
         <>
-        <button onClick={()=>{
+        <div className={styles.buttonContainer}>
+        <button className={styles.button} onClick={()=>{
             totalBudget === 100?(
                setClick(true) 
             ) : alert(`current budget is ${totalBudget}. Wants, needs and savings must add up to be 100`)
         }}
         >CALCULATE BUDGET</button>
+        </div>
+        <div>
+
         {click?(
-            <Doughnut data={data}/>
+            <Doughnut height={100} data={data}/>
         ):console.log('no click')}
+        </div>
         </>
     )
 }

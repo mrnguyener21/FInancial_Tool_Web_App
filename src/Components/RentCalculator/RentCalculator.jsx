@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import RentChart from './RentChart/RentChart'
+import styles from './RentCalculator.module.css'
 
-const RentCalculator = () => {
+const RentCalculator = ({handleClose}) => {
     const [salary, setSalary] = useState('');
     const [tax, settax] = useState('')
   
@@ -11,10 +12,15 @@ const RentCalculator = () => {
     const monthlyTax = (salary * taxPercentage)/12
   
     return (
-      <div>
-        <input type='text' placeholder="Enter Earnings Per Year" value={salary} onChange={(e) => setSalary(e.target.value)}/>
-        <input type='text' placeholder='Enter Tax'value={tax} onChange={(e) => settax(e.target.value)} />%
-        <RentChart monthlyIncome={monthlyIncome} monthlyTax={monthlyTax}/>
+      <div className={styles.container}>
+        <div className={styles.buttonContainer}>
+            <button className={styles.button} onClick={handleClose}>X</button>
+        </div>
+        <div className={styles.inputContainer}>
+          <input className={styles.input} type='text' placeholder="Enter Earnings Per Year" value={salary} onChange={(e) => setSalary(e.target.value)}/>
+          <input className={styles.input} type='text' placeholder='Enter Tax %'value={tax} onChange={(e) => settax(e.target.value)} />
+        </div>
+        <RentChart monthlyIncome={monthlyIncome} monthlyTax={monthlyTax} salary={salary} tax={tax} />
       </div>
     )
 }

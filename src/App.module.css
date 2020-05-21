@@ -1,14 +1,15 @@
 body{
     margin: 0;
     padding: 0;
+    outline: none !important;
 }
 .modal{
-    /* display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */ 
-    /* height: 100vh; */
     margin-top: 4%;
     margin-left: 5%;
     width: 90%;
-    border-radius: 25%;
+    outline: none !important; 
+}
+
+.fadeIn{
+    outline: 0;
 }
