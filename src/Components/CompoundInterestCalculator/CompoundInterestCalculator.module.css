@@ -1,0 +1,49 @@
+.container{
+    background-color: white;
+    height: 80vh;
+    border-radius: 25px;
+    outline: none !important;
+    display: flex; 
+    flex-direction: row;
+    margin-top: 2%;
+
+    
+}
+
+.inputContainer{
+    /* border: 2px solid black; */
+    width: 40%;
+    padding-bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input{
+    margin: 2% 1% 10% 0%;
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    border-bottom: solid 2px;
+    border-color: rgb(0, 0,255,0.3);
+    outline: 0;
+    font-size: 20px;
+    text-align: center;
+    width: 80%;
+    
+}
+
+.selectPlaceHolder{
+    display: none;
+    color: rgb(0, 0,0,0.5);
+    text-align: center;
+}
+
+.buttonContainer{
+    /* border: 2px solid black; */
+    border-radius: 25px;
+    width: 99%;
+    padding-top:10px;
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import CompoundInterestChart from './CompoundInterestChart/CompoundInterestChart';
+import styles from './CompoundInterestCalculator.module.css'
 
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -7,16 +8,17 @@ import Select from '@material-ui/core/Select';
 
 const CompoundInterestCalculator = () => {
   const [initialInvestment, setInitialInvestment]= useState('');
-  const [yearsInvested,setYearsInvested] =useState('');
+  const [yearsInvested,setYearsInvested] =useState(''); 
   const [interestRate, setInterestRate] =useState('');
-  const [compoundValue, setCompoundValue] = useState({rate:''})
+  const [compoundValue, setCompoundValue] =useState('');
+  // const [compoundValue, setCompoundValue] = useState({''});
 
   
   //conversion 
   const principal = parseInt(initialInvestment);
   const interest = (interestRate/100);
   const years = parseInt(yearsInvested)
-  const compoundRate = parseInt(compoundValue.rate);
+  const compoundRate = parseInt(compoundValue);
 
   //simple interest
   const totalWithInterest = [principal];
@@ -46,23 +48,16 @@ const CompoundInterestCalculator = () => {
   };  
 
   return(
-    <div>
-      <div>
-        <div>
+    <div className={styles.container}>
+      <div className={styles.inputContainer}>
           <p>STEP 1 INITIAL INVESTMENT</p>
-          <input type={'text'} placeholder={'Inital Investment*'} value={initialInvestment}  onChange={(e)=>setInitialInvestment(e.target.value)} />
-        </div>
-        <div>
+          <input className={styles.input} type={'text'} placeholder={'Inital Investment*'} value={initialInvestment}  onChange={(e)=>setInitialInvestment(e.target.value)} />
             <p>STEP 2 CONTRIBUTE</p>
-          <input type={'text'} placeholder={'years Invested*'} value={yearsInvested}  onChange ={(e)=>setYearsInvested(e.target.value)} />
-        </div>
-        <div>
+          <input className={styles.input} type={'text'} placeholder={'years Invested*'} value={yearsInvested}  onChange ={(e)=>setYearsInvested(e.target.value)} />
           <p>STEP 3 INTEREST RATE</p>
-          <input type={'text'} placeholder={'Interest Rate*'} value={interestRate} onChange={(e)=>setInterestRate(e.target.value)} />
-        </div>
-        <div>
+          <input className={styles.input} type={'text'} placeholder={'Interest Rate*'} value={interestRate} onChange={(e)=>setInterestRate(e.target.value)} />
           <p>STEP 4 COMPOUND IT</p>
-            <FormControl>
+            {/* <FormControl className={styles.compoundRate}>
               <InputLabel>Compound Rate</InputLabel>
               <Select
                 native
@@ -70,17 +65,32 @@ const CompoundInterestCalculator = () => {
                 onChange={handleChange}
                 name="rate"
               >
-                <option aria-label="None" value="" />
                 <option value={1}>Annual</option>
                 <option value={2}>Semi-Annual</option>
                 <option value={4}>Quarterly</option>
                 <option value={12}>Monthly</option>
               </Select>
-            </FormControl>
-          </div>    
-      </div>
-            <CompoundInterestChart totalWithInterest={totalWithInterest} totalWithCompoundInterst={totalWithCompoundInterst} principal={principal} years={years} interest={interest} compoundRate={compoundRate} arrayOfYears={arrayOfYears} />
+            </FormControl> */}
+
+            <select className={styles.input} type={'text'} placeholder={'Compound Rate*'} value={compoundValue} onChange={(e)=>setCompoundValue(e.target.value)}>
+              <option className={styles.selectPlaceHolder} value="" disabled selected>Compound Rate*</option>
+              <option value={1}>Annual</option>
+              <option value={2}>Semi-Annual</option>
+              <option value={4}>Quarterly</option>
+              <option value={12}>Monthly</option>
+            </select>
+            <button onClick={()=> console.log(compoundValue)}>check</button>
         </div>
+            <CompoundInterestChart 
+              totalWithInterest={totalWithInterest} 
+              totalWithCompoundInterst={totalWithCompoundInterst} 
+              principal={principal} 
+              years={years} 
+              interest={interest} 
+              compoundRate={compoundRate} 
+              arrayOfYears={arrayOfYears} 
+            />
+      </div>
     )
   }
 

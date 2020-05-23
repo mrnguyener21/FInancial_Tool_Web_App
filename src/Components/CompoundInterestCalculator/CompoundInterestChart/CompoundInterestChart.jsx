@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import {Line} from 'react-chartjs-2';
-
+import styles from './CompoundInterestChart.module.css'
 
 
 const CompoundInterestChart = ({totalWithInterest, totalWithCompoundInterst, principal, years, interest, compoundRate, arrayOfYears}) => {
@@ -55,11 +55,13 @@ const CompoundInterestChart = ({totalWithInterest, totalWithCompoundInterst, pri
   
     return(
       <>
-      <button onClick={()=>{principal > 0 && years > 0 && interest > 0 && compoundRate > 0 ?(setClick(true) ) : console.log('fail')}}>CALCULATE</button>
-
-      {click?(
-          <Line data={data}/>
-      ):console.log('no click')}
+        <div className={styles.container}>
+          <button onClick={()=>{principal > 0 && years > 0 && interest > 0 && compoundRate > 0 ?(setClick(true) ) : console.log('fail')}}>CALCULATE</button>
+          <button onClick={()=> alert(compoundRate)}>check</button>
+          {click?(
+              <Line height={150} data={data}/>
+          ):console.log('no click')}
+        </div>
       </>
     )
 }

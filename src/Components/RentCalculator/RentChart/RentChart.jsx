@@ -13,7 +13,7 @@ const RentChart = ({monthlyIncome, monthlyTax, salary, tax}) => {
 
   const data =  {
     labels: [
-        'monthlyLeftoverIncome',
+        'Cash',
         'Rent',
         'Tax',
     ],
@@ -35,25 +35,23 @@ const RentChart = ({monthlyIncome, monthlyTax, salary, tax}) => {
 };
   return (
     <>
-    <div className={styles.container}>
       <div className={styles.sliderContainer}>
-      <Slider
-        value={rentBudget}
-        step={1}
-        min={0}
-        max={100}
-        valueLabelDisplay="auto"
-        onChange={(e,value)=>setRentBudget(value)}
-      />
-      <Typography id="discrete-slider-small-steps" gutterBottom>
-        Percentage of Monthly Income Going Towards Rent *Generally recommendation is up to 30%* *numbers rounded to nearest whole dollar*
-      </Typography>
+        <Slider
+          value={rentBudget}
+          step={1}
+          min={0}
+          max={100}
+          valueLabelDisplay="auto"
+          onChange={(e,value)=>setRentBudget(value)}
+        />
+        <Typography id="discrete-slider-small-steps" gutterBottom>
+          Percentage of Monthly Income Going Towards Rent *Generally recommendation is up to 30%* *numbers rounded to nearest whole dollar*
+        </Typography>
       </div>
       <div className={styles.buttonContainer}>
-      <button className={styles.button} onClick={()=> salary > 0 && tax > 0?setClick(true):console.log(salary, tax)} >CALCULATE BUDGET</button>
+       <button className={styles.button} onClick={()=> salary > 0 && tax > 0?setClick(true):console.log(salary, tax)} >CALCULATE BUDGET</button>
       </div>
       {click?(<Doughnut height={90} data={data}/>):console.log(click)}    
-    </div>
     </>
   )
 }
