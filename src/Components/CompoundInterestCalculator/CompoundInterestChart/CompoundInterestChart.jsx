@@ -57,7 +57,6 @@ const CompoundInterestChart = ({totalWithInterest, totalWithCompoundInterst, pri
       <>
         <div className={styles.container}>
           <button onClick={()=>{principal > 0 && years > 0 && interest > 0 && compoundRate > 0 ?(setClick(true) ) : console.log('fail')}}>CALCULATE</button>
-          <button onClick={()=> alert(compoundRate)}>check</button>
           {click?(
               <Line height={150} data={data}/>
           ):console.log('no click')}

@@ -2,17 +2,11 @@ import React, {useState} from 'react';
 import CompoundInterestChart from './CompoundInterestChart/CompoundInterestChart';
 import styles from './CompoundInterestCalculator.module.css'
 
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-
-const CompoundInterestCalculator = () => {
+const CompoundInterestCalculator = ({handleClose, compoundInterest}) => {
   const [initialInvestment, setInitialInvestment]= useState('');
   const [yearsInvested,setYearsInvested] =useState(''); 
   const [interestRate, setInterestRate] =useState('');
   const [compoundValue, setCompoundValue] =useState('');
-  // const [compoundValue, setCompoundValue] = useState({''});
-
   
   //conversion 
   const principal = parseInt(initialInvestment);
@@ -39,57 +33,39 @@ const CompoundInterestCalculator = () => {
     
   }
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    setCompoundValue({
-      ...compoundValue,
-      [name]: event.target.value,
-    });
-  };  
-
   return(
     <div className={styles.container}>
-      <div className={styles.inputContainer}>
-          <p>STEP 1 INITIAL INVESTMENT</p>
-          <input className={styles.input} type={'text'} placeholder={'Inital Investment*'} value={initialInvestment}  onChange={(e)=>setInitialInvestment(e.target.value)} />
-            <p>STEP 2 CONTRIBUTE</p>
-          <input className={styles.input} type={'text'} placeholder={'years Invested*'} value={yearsInvested}  onChange ={(e)=>setYearsInvested(e.target.value)} />
-          <p>STEP 3 INTEREST RATE</p>
-          <input className={styles.input} type={'text'} placeholder={'Interest Rate*'} value={interestRate} onChange={(e)=>setInterestRate(e.target.value)} />
-          <p>STEP 4 COMPOUND IT</p>
-            {/* <FormControl className={styles.compoundRate}>
-              <InputLabel>Compound Rate</InputLabel>
-              <Select
-                native
-                value={compoundValue.rate}
-                onChange={handleChange}
-                name="rate"
-              >
+      <div className={styles.buttonContainer}>
+        <button className={styles.button} onClick={handleClose}>X</button>
+      </div>
+      <div className={styles.contentContainer}>
+        <div className={styles.inputContainer}>
+            <h3 className={styles.step}>STEP 1 INITIAL INVESTMENT</h3>
+              <input className={styles.input} type={'text'} placeholder={'Inital Investment*'} value={initialInvestment}  onChange={(e)=>setInitialInvestment(e.target.value)} />
+            <h3 className={styles.step}>STEP 2 CONTRIBUTE</h3>
+              <input className={styles.input} type={'text'} placeholder={'years Invested*'} value={yearsInvested}  onChange ={(e)=>setYearsInvested(e.target.value)} />
+            <h3 className={styles.step}>STEP 3 INTEREST RATE</h3>
+              <input className={styles.input} type={'text'} placeholder={'Interest Rate*'} value={interestRate} onChange={(e)=>setInterestRate(e.target.value)} />
+            <h3 className={styles.step}>STEP 4 COMPOUND IT</h3>
+              <select className={styles.input} type={'text'} placeholder={'Compound Rate*'} value={compoundValue} onChange={(e)=>setCompoundValue(e.target.value)}>
+                <option className={styles.selectPlaceHolder} value="" disabled selected>Compound Rate*</option>
                 <option value={1}>Annual</option>
                 <option value={2}>Semi-Annual</option>
                 <option value={4}>Quarterly</option>
                 <option value={12}>Monthly</option>
-              </Select>
-            </FormControl> */}
-
-            <select className={styles.input} type={'text'} placeholder={'Compound Rate*'} value={compoundValue} onChange={(e)=>setCompoundValue(e.target.value)}>
-              <option className={styles.selectPlaceHolder} value="" disabled selected>Compound Rate*</option>
-              <option value={1}>Annual</option>
-              <option value={2}>Semi-Annual</option>
-              <option value={4}>Quarterly</option>
-              <option value={12}>Monthly</option>
-            </select>
-            <button onClick={()=> console.log(compoundValue)}>check</button>
+              </select>
+              <button onClick={()=> console.log(compoundInterest)}>check</button>
+          </div>
+              <CompoundInterestChart 
+                totalWithInterest={totalWithInterest} 
+                totalWithCompoundInterst={totalWithCompoundInterst} 
+                principal={principal} 
+                years={years} 
+                interest={interest} 
+                compoundRate={compoundRate} 
+                arrayOfYears={arrayOfYears} 
+              />
         </div>
-            <CompoundInterestChart 
-              totalWithInterest={totalWithInterest} 
-              totalWithCompoundInterst={totalWithCompoundInterst} 
-              principal={principal} 
-              years={years} 
-              interest={interest} 
-              compoundRate={compoundRate} 
-              arrayOfYears={arrayOfYears} 
-            />
       </div>
     )
   }

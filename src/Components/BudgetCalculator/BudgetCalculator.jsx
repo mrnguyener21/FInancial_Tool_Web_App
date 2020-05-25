@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
 import BudgetChart from './BudgetChart/BudgetChart';
-import styles from './BudgetCalculator.module.css'
+import styles from './BudgetCalculator.module.css';
 
-const BudgetCalculator = ({handleClose}) => {
-    const [salary, Setsalary] = useState('');
+const BudgetCalculator = ({ handleClose }) => {
+    const [salary, setSalary] = useState('');
     const [taxRate, setTaxRate] = useState('');
     const [wantsBudget, setWantsBudget] = useState('');
     const [needsBudget, setNeedsBudget] = useState('');
     const [savingsBudget, setSavingsBudget] = useState('');
-
 
     const taxFormula =  salary*(taxRate/100);
     const wantsFormula =  (salary - taxFormula)*(wantsBudget/100);
@@ -23,7 +22,7 @@ const BudgetCalculator = ({handleClose}) => {
                 <button className={styles.button} onClick={handleClose}>X</button>
             </div>
             <div className={styles.inputContainer}>
-                <input className={styles.input} type='text' placeholder="Enter Earnings Per Year" value={salary} onChange={(e) => Setsalary(e.target.value)}/>
+                <input className={styles.input} type='text' placeholder="Enter Earnings Per Year" value={salary} onChange={(e) => setSalary(e.target.value)}/>
                 <input className={styles.input} type='text' placeholder='taxrate(this is a % value)' value={taxRate} onChange={(e)=> setTaxRate(e.target.value) } />
                 <input className={styles.input} type='text' placeholder='Wants(this is a % value)' value={wantsBudget} onChange={(e)=> setWantsBudget(e.target.value)}/>
                 <input className={styles.input} type='text 'placeholder='Needs(this is a % value)' value={needsBudget} onChange={(e)=> setNeedsBudget(e.target.value)} />
