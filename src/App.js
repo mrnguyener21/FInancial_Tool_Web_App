@@ -15,17 +15,17 @@ const App = ()=> {
       <h1 className={styles.header}>Financial Tools</h1>
 
       <button type="button" onClick={() => setIsBudgetOpen(true)} className={styles.button}>Budget Calculator</button>
-      <Modal className={styles.modal} open={isBudgetOpen} onClose={() => setIsBudgetOpen(false)}>
+      <Modal className={styles.modal} open={isBudgetOpen} >
         <BudgetCalculator handleClose={() => setIsBudgetOpen(false)} />
       </Modal>
 
       <button type="button" onClick={() => setIsRentOpen(true)} className={styles.button}>Rent Calculator</button>
-      <Modal className={styles.modal} open={isRentOpen} onClose={() => setIsRentOpen(false)}>
+      <Modal className={styles.modal} open={isRentOpen}>
         <RentCalculator handleClose={() => setIsRentOpen(false)} />
       </Modal>
 
       <button type="button" onClick={() => setIsCompoundInterestOpen(true)} className={styles.button}>Compound Interest Calculator</button>
-      <Modal className={styles.modal} open={isCompoundInterestOpen} onClose={() => setIsCompoundInterestOpen(false)}>
+      <Modal className={styles.modal} open={isCompoundInterestOpen}>
         <CompoundInterestCalculator handleClose={() => setIsCompoundInterestOpen(false)} />
       </Modal>
 
