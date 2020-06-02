@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { BudgetCalculator, CompoundInterestCalculator, RentCalculator, MoreInfo } from './Components';
 import sample from './image/sample.JPG'
 import graph from './image/graph.png';
+import budgetImage from './image/budgetImage.JPG'
+import rentImage from './image/rentImage.JPG'
 
 import styles from './App.module.css'
 
@@ -21,7 +23,7 @@ const App = ()=> {
       </div>
     <div className={styles.modalContainer}>
       <div className={styles.something}>
-        <img className={styles.image} src={sample}/>
+        <img className={styles.image} id={styles.budgetImage} src={budgetImage}/>
         <button type="button" onClick={() => setIsBudgetOpen(true)} className={styles.button}>Budget Calculator</button>
         <Modal className={styles.modal} open={isBudgetOpen} >
           <BudgetCalculator handleClose={() => setIsBudgetOpen(false)} />
@@ -29,7 +31,7 @@ const App = ()=> {
       </div>
 
       <div className={styles.something}>
-        <img className={styles.image} src={sample}/>
+        <img className={styles.image} id={styles.rentImage} src={rentImage}/>
         <button type="button" onClick={() => setIsRentOpen(true)} className={styles.button}>Rent Calculator</button>
         <Modal className={styles.modal} open={isRentOpen}>
           <RentCalculator handleClose={() => setIsRentOpen(false)} />

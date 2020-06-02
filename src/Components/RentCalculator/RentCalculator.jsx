@@ -17,8 +17,8 @@ const RentCalculator = ({handleClose, rent}) => {
             <button className={styles.button} onClick={handleClose}>X</button>
         </div>
         <div className={styles.inputContainer}>
-          <input className={styles.input} type='text' placeholder="Enter Earnings Per Year" value={salary} onChange={(e) => setSalary(e.target.value)}/>
-          <input className={styles.input} type='text' placeholder='Enter Tax %'value={tax} onChange={(e) => settax(e.target.value)} />
+          <input className={styles.input} type='text' placeholder="INCOME" value={salary} onChange={(e) => setSalary(e.target.value)}/>
+          <input className={styles.input} type='text' placeholder='TAX'value={tax} onChange={(e) => settax(e.target.value)} />
         </div>
         <RentChart monthlyIncome={monthlyIncome} monthlyTax={monthlyTax} salary={salary} tax={tax} />
       </div>

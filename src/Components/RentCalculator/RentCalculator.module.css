@@ -1,5 +1,6 @@
 .container{
-    background-color: white; 
+    background-color: white;
+    box-shadow:  0 0 5px rgba(0,0,0,.5), 2px 2px 5px rgba(0,0,0,.75);
     height: 80vh;
     border-radius: 25px;
     outline: none !important;
@@ -10,25 +11,48 @@
 .inputContainer{
     display: flex;
     justify-content: center;
+    margin-top: 5%;
 }
 
 .input{
-    margin: 2% 1% 2% 0%;
+    margin: 2% 2% 2% 2%;
     border-top:0;
     border-left:0;
     border-right:0;
-    border-color: rgb(0, 0,255,0.3);
+    border-color: rgb(3, 209, 109, 0.5);
+    box-shadow: 0 0 0px rgba(50, 172, 115,.1), 2px 2px 5px rgba(50, 172, 115,.25);
     outline: 0;
     font-size: 20px;
     text-align: center;
-    width: 10%;
+    width: 12%;
+    font-family: 'Oswald', sans-serif;
+    color: grey;
     
 }
 
 .buttonContainer{
+    /* border: 2px solid black; */
     border-radius: 25px;
     width: 99%;
     padding-top:10px;
     display: flex;
     justify-content: flex-end;
+}
+
+.button{
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: rgba(0, 255, 132, 0.596);
+    color: black;
+    font-size: 20px;
+    padding: 0 1%;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+.button:hover{
+    background-color: rgb(3, 209, 109);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out 0s;
 }

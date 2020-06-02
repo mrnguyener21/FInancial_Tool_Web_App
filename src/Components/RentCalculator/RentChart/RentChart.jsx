@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
 import {Typography, Slider} from '@material-ui/core'
 import {Doughnut} from 'react-chartjs-2';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 
 import styles from './RentChart.module.css';
 
@@ -20,30 +22,50 @@ const RentChart = ({monthlyIncome, monthlyTax, salary, tax}) => {
     datasets: [{
         data: [monthlyLeftoverIncome, rent, monthlyTax],
         backgroundColor: [
-        '#FF6384',
-        '#36A2EB',
-        '#FFCE56',
+          "#69F0AE",
+          "#00E676",
+          "#00C853",
         // '#CC99FF'
         ],
         hoverBackgroundColor: [
-        '#FF6384',
-        '#36A2EB',
-        '#FFCE56',
+          "#69F0AE",
+          "#00E676",
+          "#00C853",
         // '#CC99FF'
         ]
     }]
 };
+
+const muiTheme = createMuiTheme({
+  overrides:{
+    MuiSlider: {
+      thumb:{
+      color: "rgb(3, 141, 74)",
+      },
+      track: {
+        color: 'rgb(3, 209, 109)'
+      },
+      rail: {
+        color: 'black'
+      }
+    }
+}
+});
+
   return (
     <>
       <div className={styles.sliderContainer}>
-        <Slider
-          value={rentBudget}
-          step={1}
-          min={0}
-          max={100}
-          valueLabelDisplay="auto"
-          onChange={(e,value)=>setRentBudget(value)}
-        />
+        <ThemeProvider theme={muiTheme}>
+          <Slider
+            className={styles.slider}
+            value={rentBudget}
+            step={1}
+            min={0}
+            max={100}
+            valueLabelDisplay="auto"
+            onChange={(e,value)=>setRentBudget(value)}
+          />
+        </ThemeProvider>
         <Typography id="discrete-slider-small-steps" gutterBottom>
           Percentage of Monthly Income Going Towards Rent *Generally recommendation is up to 30%* *numbers rounded to nearest whole dollar*
         </Typography>
@@ -51,7 +73,7 @@ const RentChart = ({monthlyIncome, monthlyTax, salary, tax}) => {
       <div className={styles.buttonContainer}>
        <button className={styles.button} onClick={()=> salary > 0 && tax > 0?setClick(true):console.log(salary, tax)} >CALCULATE BUDGET</button>
       </div>
-      {click?(<Doughnut height={90} data={data}/>):console.log(click)}    
+      {click?(<Doughnut height={170} data={data}/>):console.log(click)}    
     </>
   )
 }
