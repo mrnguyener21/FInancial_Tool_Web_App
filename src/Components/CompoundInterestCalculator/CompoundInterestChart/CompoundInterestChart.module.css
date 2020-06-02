@@ -2,7 +2,39 @@
     /* border: 2px solid blue; */
     /* margin-top: 5%; */
     width: 90%;
+    margin-left: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.buttonContainer{
+    /* border: solid; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+    margin-top: 5%;
+    }
+    
+.button{
+    /* background-color: yellow; */
+    border: none;
+    outline: none;
+    background-Color:rgba(3, 209, 109, 0.8);
+    /* background-Color:rgb(19, 87, 54); */
+    border-radius: 10px;
+    /* padding: 2%; */
+    color: rgb(255, 255, 255);
+    padding: 0.5% 2% 0.5% 2%;
+    margin-bottom: 2%;
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif; 
+}
+
+.button:hover{
+    background-color: rgb(3, 209, 109);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out 0s;
 }

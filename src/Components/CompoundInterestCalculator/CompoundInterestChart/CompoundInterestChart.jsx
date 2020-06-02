@@ -13,8 +13,8 @@ const CompoundInterestChart = ({totalWithInterest, totalWithCompoundInterst, pri
           label: 'Total Amount With Interest',
           fill: false,
           lineTension: 0.1,
-          backgroundColor: 'rgba(75,192,192,0.4)',//refers to the color of the point
-          borderColor: 'rgba(75,192,192,1)',// refers to line border
+          // backgroundColor: 'grey',//refers to the color of the point
+          borderColor: '#00E676',// refers to line border
           borderCapStyle: 'butt',
           borderDash: [],
           borderDashOffset: 0.0,
@@ -22,8 +22,8 @@ const CompoundInterestChart = ({totalWithInterest, totalWithCompoundInterst, pri
           pointBorderColor: 'rgba(0,0,0)',
           pointBorderWidth: 2,
           pointHoverRadius: 5,
-          pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-          pointHoverBorderColor: 'rgba(220,220,220,1)',
+          pointHoverBackgroundColor: 'rgb(19, 87, 54)',
+          pointHoverBorderColor: 'rgb(255,255,255)',
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
@@ -33,8 +33,8 @@ const CompoundInterestChart = ({totalWithInterest, totalWithCompoundInterst, pri
           label: 'Total Amount With Comound Interest',
           fill: false,
           lineTension: 0.1,
-          backgroundColor:'#FFCE56',//refers to the color of the point
-          borderColor: '#FFCE56',// refers to line border
+          // backgroundColor:'#FFCE56',//refers to the color of the point
+          borderColor: '#00C853',// refers to line border
           borderCapStyle: 'butt',
           borderDash: [],
           borderDashOffset: 0.0,
@@ -43,8 +43,8 @@ const CompoundInterestChart = ({totalWithInterest, totalWithCompoundInterst, pri
           pointBackgroundColor: '#fff',
           pointBorderWidth: 2,
           pointHoverRadius: 5,
-          pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-          pointHoverBorderColor: 'rgba(220,220,220,1)',
+          pointHoverBackgroundColor: 'rgb(19, 87, 54)',
+          pointHoverBorderColor: 'rgb(255,255,255)',
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
@@ -56,7 +56,13 @@ const CompoundInterestChart = ({totalWithInterest, totalWithCompoundInterst, pri
     return(
       <>
         <div className={styles.container}>
-          <button onClick={()=>{principal > 0 && years > 0 && interest > 0 && compoundRate > 0 ?(setClick(true) ) : console.log('fail')}}>CALCULATE</button>
+        <div className={styles.buttonContainer}>          
+          <button 
+            className={styles.button} 
+            onClick={()=>{principal > 0 && years > 0 && interest > 0 && compoundRate > 0 ?(setClick(true) ) : console.log('fail')}}
+          >CALCULATE
+          </button>
+        </div>
           {click?(
               <Line height={150} data={data}/>
           ):console.log('no click')}

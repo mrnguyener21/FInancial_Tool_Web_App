@@ -22,32 +22,26 @@ body{
     align-items: center;
     background-color: rgb(50, 172, 115); 
     color: white;
-    padding: 4% 0 4% 0%;
-    margin-bottom: 4%;
+    padding: 4% 0 3% 0%;
+    margin-bottom: 6%;
 }
 .header{
-    /* width: 50%; */
-    /* text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* color: white; */
-    font-size: 40px;
+    font-size: 38px;
     padding-right: 1%;
-    /* border: solid; */
 }
 
 
 .modalContainer{
+    /* border: solid; */
     width: 100%;
     padding-left: 2%;
-    margin-bottom: 10%;
+    margin-bottom: 14%;
     display: flex;
     justify-content: center;
 }
 
-.something{
-    box-shadow: 0 0 5px rgba(50, 172, 115,.1), 2px 2px 5px rgba(50, 172, 115,.5);
+.modalAndButton{
+    box-shadow: 0 0 5px rgba(50, 172, 115,.1), 2px 2px 5px rgba(50, 172, 115,1);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,11 +53,27 @@ body{
     height: 400px;
 }
 
-.image{
+#budgetImage{
     width: 80%;
     border-radius: 25px;
     margin-bottom: 10%;
 }
+
+#rentImage{
+    width: 70%;
+    border-radius: 25px;
+    margin-top: -2%;
+    margin-bottom: 5%;
+}
+
+#compoundInterestImage{
+    width: 100%;
+    border-radius: 25px;
+    /* margin-top: -2%; */
+    margin-bottom: 10%;
+}
+
+
 
 .button{
     border: none;
