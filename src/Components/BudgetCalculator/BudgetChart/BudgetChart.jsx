@@ -15,16 +15,20 @@ const BudgetChart = ({totalBudget, wantsFormula, needsFormula, savingsFormula, t
         datasets: [{
             data: [wantsFormula, needsFormula, savingsFormula, taxFormula],
             backgroundColor: [
-            '#FF6384',
-            '#36A2EB',
-            '#FFCE56',
-            '#CC99FF'
+            '#B9F6CA',
+            "#69F0AE",
+            "#00E676",
+            "#00C853",
             ],
             hoverBackgroundColor: [
-            '#FF6384',
-            '#36A2EB',
-            '#FFCE56',
-            '#CC99FF'
+            '#B9F6CA',
+            "#69F0AE",
+            "#00E676",
+            "#00C853",
+            // 'rgba(3, 209, 109,0.5)',
+            // "rgba(2, 172, 89,0.5)",
+            // "rgba(2, 116, 60,0.5)",
+            // "rgba(1, 68, 36,0.5)",       
             ]
         }]
     };
@@ -43,7 +47,7 @@ const BudgetChart = ({totalBudget, wantsFormula, needsFormula, savingsFormula, t
         <div>
 
         {click?(
-            <Doughnut height={100} data={data}/>
+            <Doughnut height={170} data={data}/>
         ):console.log('no click')}
         </div>
         </>

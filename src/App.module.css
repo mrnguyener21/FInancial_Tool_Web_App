@@ -85,11 +85,12 @@ body{
 .modal{
     /* border: solid; */
     margin-top: 4%;
-    margin-left: 5%;
-    width: 90%;
+    margin-left: 30%;
+    width: 40%;
     outline: none !important; 
 }
 
 .fadeIn{
     outline: 0;
 }
+

@@ -2,8 +2,23 @@
 display: flex;
 justify-content: center;
 margin-bottom: 2%;
+margin-top: 5%;
 }
 
 .button{
+    border: none;
+    outline: none;
+    background-Color:rgba(3, 209, 109, 0.8);
+    border-radius: 15px;
+    padding: 0.5% 1% 0.5% 1%;
+    color: rgb(255, 255, 255);
+    margin-bottom: 2%;
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+}
 
+.button:hover{
+    background-color: rgb(3, 209, 109);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out 0s;
 }

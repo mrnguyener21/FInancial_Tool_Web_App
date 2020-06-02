@@ -22,11 +22,11 @@ const BudgetCalculator = ({ handleClose }) => {
                 <button className={styles.button} onClick={handleClose}>X</button>
             </div>
             <div className={styles.inputContainer}>
-                <input className={styles.input} type='text' placeholder="Enter Earnings Per Year" value={salary} onChange={(e) => setSalary(e.target.value)}/>
-                <input className={styles.input} type='text' placeholder='taxrate(this is a % value)' value={taxRate} onChange={(e)=> setTaxRate(e.target.value) } />
-                <input className={styles.input} type='text' placeholder='Wants(this is a % value)' value={wantsBudget} onChange={(e)=> setWantsBudget(e.target.value)}/>
-                <input className={styles.input} type='text 'placeholder='Needs(this is a % value)' value={needsBudget} onChange={(e)=> setNeedsBudget(e.target.value)} />
-                <input className={styles.input} type='text 'placeholder='Savings(this is a % value)' value={savingsBudget} onChange={(e)=> setSavingsBudget(e.target.value)} 
+                <input className={styles.input} type='text' value={salary} onChange={(e) => setSalary(e.target.value)}/>
+                <input className={styles.input} type='text' value={taxRate} onChange={(e)=> setTaxRate(e.target.value) } />
+                <input className={styles.input} type='text' value={wantsBudget} onChange={(e)=> setWantsBudget(e.target.value)}/>
+                <input className={styles.input} type='text 'value={needsBudget} onChange={(e)=> setNeedsBudget(e.target.value)} />
+                <input className={styles.input} type='text 'value={savingsBudget} onChange={(e)=> setSavingsBudget(e.target.value)} 
                 />
             </div>
             <BudgetChart salary={parseInt(salary)} totalBudget={totalBudget}wantsFormula={wantsFormula} needsFormula={needsFormula} savingsFormula={savingsFormula} taxFormula={taxFormula}/>
