@@ -22,12 +22,12 @@ body{
     align-items: center;
     background-color: rgb(50, 172, 115); 
     color: white;
-    padding: 4% 0 3% 0%;
+    padding: 3% 0 3% 0%;
     margin-bottom: 6%;
 }
 .header{
-    font-size: 38px;
-    padding-right: 1%;
+    font-size: 35px;
+    margin-right: 1%;
 }
 
 
