@@ -67,7 +67,7 @@ const muiTheme = createMuiTheme({
           />
         </ThemeProvider>
         <Typography id="discrete-slider-small-steps" gutterBottom>
-          Percentage of Monthly Income Going Towards Rent *Generally recommendation is up to 30%* *numbers rounded to nearest whole dollar*
+          *Percentage of Monthly Income Going Towards* 
         </Typography>
       </div>
       <div className={styles.buttonContainer}>

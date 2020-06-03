@@ -28,9 +28,6 @@ margin-top: 5%;
         padding: 1% 4%;
     }
 
-    .chart{
-        height: 180;
-    }
 }
 
 @media only screen and (min-width: 400px) and (max-width: 750px) {/*plus size phone*/
