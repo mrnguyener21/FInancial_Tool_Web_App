@@ -67,7 +67,7 @@ const muiTheme = createMuiTheme({
           />
         </ThemeProvider>
         <Typography id="discrete-slider-small-steps" gutterBottom>
-          *Percentage of Monthly Income Going Towards* 
+          *Percentage of Income Taxed* 
         </Typography>
       </div>
       <div className={styles.buttonContainer}>
