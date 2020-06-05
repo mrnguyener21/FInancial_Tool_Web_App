@@ -41,9 +41,9 @@ const App = ()=> {
       <div className={styles.modalAndButton}>
         <img className={styles.image} id={styles.compoundInterestImage} src={compoundInterestImage}/>
         <button type="button" onClick={() => setIsCompoundInterestOpen(true)} className={styles.button}>Compound Interest Calculator</button>
-        <Modal className={styles.modal} open={isCompoundInterestOpen}>
-          <CompoundInterestCalculator handleClose={() => setIsCompoundInterestOpen(false)} />
-        </Modal>
+          <Modal className={styles.modal} open={isCompoundInterestOpen}>
+            <CompoundInterestCalculator handleClose={() => setIsCompoundInterestOpen(false)} />
+          </Modal>
       </div>
     </div>
 

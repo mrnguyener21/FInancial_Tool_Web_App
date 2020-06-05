@@ -96,6 +96,7 @@ body{
     margin-bottom: 2%;
     font-size: 15px;
     font-family: 'Oswald', sans-serif;
+
 }
 
 .button:hover{
@@ -103,12 +104,14 @@ body{
     cursor: pointer;
     transition: all 0.2s ease-in-out 0s;
 }
+
 .modal{
-    /* border: solid; */
     margin-top: 4%;
     margin-left: 30%;
     width: 40%;
     outline: none !important; 
+
+    animation-name: modalAnimation;
 }
 
 .fadeIn{

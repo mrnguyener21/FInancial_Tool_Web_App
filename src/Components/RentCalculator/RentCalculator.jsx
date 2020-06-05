@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import RentChart from './RentChart/RentChart'
 import styles from './RentCalculator.module.css'
 
+import Zoom from '@material-ui/core/Zoom';
+
 const RentCalculator = ({handleClose, rent}) => {
     const [salary, setSalary] = useState('');
     const [tax, settax] = useState('')
@@ -12,16 +14,18 @@ const RentCalculator = ({handleClose, rent}) => {
     const monthlyTax = (salary * taxPercentage)/12
   
     return (
-      <div className={styles.container}>
-        <div className={styles.buttonContainer}>
-            <button className={styles.button} onClick={handleClose}>X</button>
+      <Zoom in='yes'>
+        <div className={styles.container}>
+          <div className={styles.buttonContainer}>
+              <button className={styles.button} onClick={handleClose}>X</button>
+          </div>
+          <div className={styles.inputContainer}>
+            <input className={styles.input} type='text' placeholder="INCOME" value={salary} onChange={(e) => setSalary(e.target.value)}/>
+            <input className={styles.input} type='text' placeholder='TAX'value={tax} onChange={(e) => settax(e.target.value)} />
+          </div>
+          <RentChart monthlyIncome={monthlyIncome} monthlyTax={monthlyTax} salary={salary} tax={tax} />
         </div>
-        <div className={styles.inputContainer}>
-          <input className={styles.input} type='text' placeholder="INCOME" value={salary} onChange={(e) => setSalary(e.target.value)}/>
-          <input className={styles.input} type='text' placeholder='TAX'value={tax} onChange={(e) => settax(e.target.value)} />
-        </div>
-        <RentChart monthlyIncome={monthlyIncome} monthlyTax={monthlyTax} salary={salary} tax={tax} />
-      </div>
+      </Zoom>
     )
 }
 
