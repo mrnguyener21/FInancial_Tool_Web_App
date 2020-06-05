@@ -49,6 +49,19 @@ body{
     margin-right: 5%;
     width: 15%;
     height: 400px;
+
+    animation-name: modalAndButtonAnimation;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+}
+
+@keyframes modalAndButtonAnimation{
+    100%{
+        opacity: 1;
+        transform: rotate(360deg)
+    }
 }
 
 #budgetImage{
