@@ -44,7 +44,7 @@ const CompoundInterestCalculator = ({handleClose, compoundInterest}) => {
               <input className={styles.input} type={'text'} placeholder={'years Invested'} value={yearsInvested}  onChange ={(e)=>setYearsInvested(e.target.value)} />
               <input className={styles.input} type={'text'} placeholder={'Interest Rate'} value={interestRate} onChange={(e)=>setInterestRate(e.target.value)} />
               <select className={styles.input} type={'text'} placeholder={'Compound Rate'} value={compoundValue} onChange={(e)=>setCompoundValue(e.target.value)}>
-                <option className={styles.selectPlaceHolder} value="" disabled selected>Compound Rate*</option>
+                <option className={styles.selectPlaceHolder} value="" disabled selected>Compound</option>
                 <option value={1}>Annual</option>
                 <option value={2}>Semi-Annual</option>
                 <option value={4}>Quarterly</option>

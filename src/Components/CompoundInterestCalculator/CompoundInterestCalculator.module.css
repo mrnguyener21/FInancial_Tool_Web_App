@@ -64,12 +64,14 @@
     }
     
     .input{
-        font-size: 15px;
-        width: 18%;
+        font-size: 10px;
+        width: 30%;
     }
     .button{
         padding: 0 2%;
         margin-right: 0.5%;
+        font-size: 15px;
+        border-radius: 8px;
     }
 }
 
@@ -80,8 +82,8 @@
     }
     
     .input{
-        font-size: 17px;
-        width: 18%;
+        font-size: 11px;
+        width: 25%;
     }
     .button{
         padding: 0 2%;
@@ -93,6 +95,9 @@
         height: 60vh;
     }
 
+    .input{
+        font-size: 15px;
+    }
 }
 
 
