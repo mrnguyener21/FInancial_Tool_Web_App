@@ -1,0 +1,286 @@
+$phone: 480px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 14400px;
+
+body{ 
+    outline: none !important;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    
+    .headerContainer{
+        /* border: solid black; */
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(50, 172, 115); 
+        color: white;
+        padding: 3% 0 3% 0%;
+        margin-bottom: 6%;
+    }
+    .header{
+        font-size: 35px;
+        margin-right: 1%;
+    }
+    
+    .modalContainer{
+        /* border: solid; */
+        width: 100%;
+        padding-left: 2%;
+        margin-bottom: 14%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .modalAndButton{
+        box-shadow: 0 0 5px rgba(50, 172, 115,.1), 2px 2px 5px rgba(50, 172, 115,1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 25px;
+        margin-right: 5%;
+        width: 15%;
+        height: 400px;
+    
+        animation-name: modalAndButtonAnimation;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        @keyframes modalAndButtonAnimation{
+            100%{
+                opacity: 1;
+                transform: rotate(360deg)
+            }
+        }
+        #budgetImage{
+            width: 80%;
+            border-radius: 25px;
+            margin-bottom: 10%;
+        }
+        
+        #rentImage{
+            width: 70%;
+            border-radius: 25px;
+            margin-top: -2%;
+            margin-bottom: 5%;
+        }
+        
+        #compoundInterestImage{
+            width: 100%;
+            border-radius: 25px;
+            /* margin-top: -2%; */
+            margin-bottom: 10%;
+        }
+    }
+    
+    }
+
+.button{
+    border: none;
+    outline: none;
+    background-Color:rgba(3, 209, 109, 0.8);
+    border-radius: 15px;
+    padding: 2% 4% 2% 4%;
+    color: rgb(255, 255, 255);
+    margin-bottom: 2%;
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+
+    &:hover{
+        background-color: rgb(3, 209, 109);
+        cursor: pointer;
+        transition: all 0.2s ease-in-out 0s;
+    }
+    .modal{
+        margin-top: 4%;
+        margin-left: 30%;
+        width: 40%;
+        outline: none !important; 
+    
+        animation-name: modalAnimation;
+    }
+    
+    .fadeIn{
+        outline: 0;
+    }
+}
+
+@media screen and (max-width: $phone){
+    .container{
+        // border: solid red;
+
+        .headerContainer{
+            // border: solid blue;
+            .header{
+                // border: solid;
+                text-align: center;
+            }
+            .graph{
+                display: none;
+            }
+        }
+        .modalContainer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+        }
+        
+        .modalAndButton{
+            width: 80%;
+            height: 350px;
+            margin: 20% 0;
+        }
+    
+        .modal{
+            // border: solid;
+            width: 80%;
+            margin-left: 5%;
+        }
+    
+    }
+}
+
+@media screen and (min-width: $phone) and (max-width:$tablet){
+    .header{
+        text-align: center;
+    }
+    .graph{
+        display: none;
+    }
+
+    .modalContainer{
+        // border: solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80% !important;
+
+        .modalAndButton{
+            width: 80%;
+            height: 350px;
+            margin: 20% 0;
+        }
+    
+        .modal{
+            width: 80%;
+            margin-left: 5%;
+        }
+    }
+}
+
+@media screen and (min-width: $tablet) and (max-width:$desktop){
+    .modalContainer{
+        // border: solid;
+        width: 90% !important;
+    }
+    .modalAndButton{
+        // border: solid red;
+        width: 30% !important;
+        // width: 30%;
+        // margin: 10% 2% 40% 0%;
+
+    }
+    .modal{
+        width: 80%;
+        margin-left: 10%;
+    }
+}
+
+// @media only screen and (max-width: 500px) { /*iphonX*/
+    // .header{
+    //     text-align: center;
+    // }
+
+    // .graph{
+    //     width: 0;
+    // }
+
+    // .modalContainer{
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     align-items: center;
+    // }
+    
+    // .modalAndButton{
+    //     width: 80%;
+    //     height: 350px;
+    //     margin: 20% 0;
+    // }
+
+    // .modal{
+    //     width: 90%;
+    //     margin-left: 5%;
+    // }
+
+// }
+
+// @media only screen and (min-width: 400px) and (max-width: 750px) { /*plus size phone*/
+//     .header{
+//         text-align: center;
+//     }
+
+//     .graph{
+//         width: 0;
+//     }
+
+//     .modalContainer{
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//     }
+
+//     .modalAndButton{
+//         width: 80%;
+//         height: 350px;
+//     }
+
+//     .modal{
+//         width: 90%;
+//         margin-left: 5%;
+//     }
+// }
+// @media only screen and (min-width: 750px) and (max-width: 799px) {/*ipad*/
+//     .header{
+//         text-align: center;
+//     }
+//     .modalAndButton{
+//         width: 30%;
+//         height: 300px;
+//         margin: 10% 2% 30% 0%;
+//     }
+//     .modal{
+//         width: 85%;
+//         margin-left: 8%;
+//     }
+// }
+
+
+// @media only screen and (min-width: 800px) and (max-width: 1100px) {/*ipad pro*/
+//     .modalAndButton{
+//         width: 30%;
+//         margin: 10% 2% 40% 0%;
+
+//     }
+//     .modal{
+//         width: 80%;
+//         margin-left: 10%;
+//     }
+// }
+

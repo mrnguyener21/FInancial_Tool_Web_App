@@ -6,7 +6,7 @@ import budgetImage from './image/budgetImage.JPG'
 import rentImage from './image/rentImage.JPG'
 import compoundInterestImage from './image/compoundInterestImage.JPG'
 
-import styles from './App.module.css'
+import styles from './App.module.scss'
 
 import Modal from '@material-ui/core/Modal';
 
