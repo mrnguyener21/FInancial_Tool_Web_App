@@ -64,7 +64,7 @@ const CompoundInterestChart = ({totalWithInterest, totalWithCompoundInterst, pri
           </button>
         </div>
           {click?(
-              <Line height={180} data={data}/>
+              <Line className={styles.chart}height={130} data={data}/>
           ):console.log('no click')}
         </div>
       </>

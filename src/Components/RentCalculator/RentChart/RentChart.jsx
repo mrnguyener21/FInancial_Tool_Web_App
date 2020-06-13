@@ -73,7 +73,7 @@ const muiTheme = createMuiTheme({
       <div className={styles.buttonContainer}>
        <button className={styles.button} onClick={()=> salary > 0 && tax > 0?setClick(true):console.log(salary, tax)} >CALCULATE BUDGET</button>
       </div>
-      {click?(<Doughnut height={170} data={data}/>):console.log(click)}    
+      {click?(<Doughnut height={100} data={data}/>):console.log(click)}    
     </>
   )
 }

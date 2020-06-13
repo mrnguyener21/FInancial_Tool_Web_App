@@ -1,9 +1,12 @@
 .container{
+    /* border: solid red; */
     background-color: white;
     box-shadow:  0 0 5px rgba(0,0,0,.5), 2px 2px 5px rgba(0,0,0,.75);
     height: 80vh;
+    margin-top: 10vh;
     border-radius: 25px;
     outline: none !important;
+
 
     
 }
@@ -34,7 +37,7 @@
     /* border: 2px solid black; */
     border-radius: 25px;
     width: 99%;
-    padding-top:10px;
+    /* padding-top:10px; */
     display: flex;
     justify-content: flex-end;
 }

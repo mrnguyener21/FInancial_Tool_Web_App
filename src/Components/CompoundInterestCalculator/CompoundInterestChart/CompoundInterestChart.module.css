@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 2%;
-    margin-top: 5%;
+    /* margin-top: 5%; */
     }
     
 .button{
@@ -39,13 +39,15 @@
     transition: all 0.2s ease-in-out 0s;
 }
 
+
 @media only screen and (max-width: 500px) {/*iphoneX*/
     .button{
         padding: 1% 4%;
     }
 
-    .graph{
-        border: solid;
+    .chart{
+        border: solid red;
+        height: 200 !important;
     }
 
 }

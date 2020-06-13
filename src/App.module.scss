@@ -34,13 +34,14 @@ body{
     }
     
     .modalContainer{
-        /* border: solid; */
         width: 100%;
         padding-left: 2%;
         margin-bottom: 14%;
         display: flex;
         justify-content: center;
+        align-items: center;
     }
+
     
     .modalAndButton{
         box-shadow: 0 0 5px rgba(50, 172, 115,.1), 2px 2px 5px rgba(50, 172, 115,1);
@@ -52,7 +53,7 @@ body{
         border-radius: 25px;
         margin-right: 5%;
         width: 15%;
-        height: 400px;
+        height: 600px;
     
         animation-name: modalAndButtonAnimation;
         animation-duration: 1.5s;
