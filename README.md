@@ -1,9 +1,7 @@
--create a modal for each component
--import over the data from each component into the app
--create a titlebar(i think that's what it's called)
-    -title will be financialTools
--at  the bottom create a quick layout with a description for each calculator
--make rent chart no show unless inputs are filled in
+# Financial Web App
+![Financial Web App](https://i.ibb.co/T0yhh4d/financial-Web-App.jpg)
 
--create a folder for all the formulas called util and transfer the formula over
--check out material ui's input to see if it works well
+### [Live Site](https://vnfinancial.netlify.app/)
+
+## Introduction
+A website containing different tools to help people with their financial needs. I created this web app as a solution to what I seen from my own usage of online financial tools. Even though the resources out there do work, I never saw a website containing multiple tools for the users to choose from and would have to go different websites for each of their financial needs.
